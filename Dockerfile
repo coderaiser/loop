@@ -10,6 +10,7 @@ RUN apk update && \
 
 COPY . /usr/src/app
 
+WORKDIR /root
 EXPOSE 8000
 
 ENTRYPOINT /usr/src/app/loop.sh
