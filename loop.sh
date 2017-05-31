@@ -10,7 +10,7 @@ FILE=$1
 SIZE=$2
 
 if [ $# -ne 2 ]; then
-     echo "mount <file> <size>";
+     echo "loop <file> <size>";
      exit;
 fi
 
