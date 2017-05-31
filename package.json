@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "description": "create file system image file",
   "bin": "loop.sh",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/loop.git"
+  },
   "scripts": {
     "lint": "shellcheck *.sh",
     "docker:build": "docker build . -t coderaiser/loop:`version`",
