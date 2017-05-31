@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "shellcheck *.sh",
     "build": "docker build . -t coderaiser/loop:`version`",
-    "wisdom": "redrun build tag push",
+    "wisdom": "redrun build push",
     "prewisdom": "rm -f package-lock.json",
     "watcher": "nodemon -w . -e sh --exec",
     "watch:lint": "npm run watcher -- 'npm run lint'"
