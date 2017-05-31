@@ -1,0 +1,19 @@
+language: bash
+addons:
+  apt:
+    sources:
+    - debian-sid
+    packages:
+    - shellcheck
+    - 
+
+script:
+  - shellcheck *.sh
+
+notifications:
+    email:
+        on_success: never
+        on_failure: change
+
+sudo: false
+

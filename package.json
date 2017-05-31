@@ -1,0 +1,23 @@
+{
+  "name": "loop",
+  "private": true,
+  "version": "1.0.0",
+  "description": "create file system image file",
+  "bin": "loop.sh",
+  "scripts": {
+    "lint": "shellcheck *.sh",
+    "build": "docker build . -t coderaiser/loop:`version`",
+    "wisdom": "redrun build tag push",
+    "prewisdom": "rm -f package-lock.json",
+    "watcher": "nodemon -w . -e sh --exec",
+    "watch:lint": "npm run watcher -- 'npm run lint'"
+  },
+  "keywords": [],
+  "author": "coderaiser",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "redrun": "^5.9.14",
+    "version-io": "^2.0.1"
+  }
+}
