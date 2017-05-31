@@ -1,3 +1,12 @@
+2017.05.31, v1.0.2
+
+fix:
+- (package) wisdom -> wisdom:done
+
+feature:
+- (package) add repository
+
+
 2017.05.31, v1.0.1
 
 fix:
