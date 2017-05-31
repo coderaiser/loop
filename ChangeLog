@@ -1,0 +1,10 @@
+2017.05.31, v1.0.1
+
+fix:
+- (package) scripts: wisdom
+- (loop) mount -> loop
+- feature(package) build, wisdom -> add prefix docker:
+
+feature:
+- (package) build, wisdom -> add prefix docker:
+
