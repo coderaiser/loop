@@ -1,7 +1,7 @@
 {
   "name": "loop",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "create file system image file",
   "bin": "loop.sh",
   "repository": {
