@@ -2,6 +2,7 @@
 
 BASENAME=$(dirname "$0");
 
+# shellcheck source=lib/api.sh
 . "$BASENAME/api.sh"
 
 FILE=${1:-$FILE};
