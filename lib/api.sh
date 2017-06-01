@@ -12,7 +12,7 @@ __printVersionIfNeed() {
     if echo "$1" | grep -Eq '(-v|--version)'; then
         BASEDIR=$(dirname "$0");
         PACKAGE="$BASEDIR/../package.json";
-        VERSION=$(grep '"version":' $PACKAGE| cut -d\" -f4)
+        VERSION=$(grep '"version":' "$PACKAGE"| cut -d\" -f4)
         echo "v$VERSION";
         exit;
     fi
@@ -22,7 +22,10 @@ __exitIfNoArgs() {
     FILE=$1;
     SIZE=$2;
     
-    if [ $# -ne 2 ] && [ -z $FILE ] || [ -z $SIZE ]; then
+    NO_ARGS=$([ $# -ne 2 ]);
+    NOT_ALL_ARGS=$([ -z "$FILE" ] || [ -z "$SIZE" ]);
+    
+    if [ "$NO_ARGS" ] || [ "$NOT_ALL_ARGS" ]; then
          echo "loop <file> <size>";
          exit;
     fi
