@@ -15,7 +15,7 @@ if [ $# -ne 2 ]; then
 fi
 
 echo file: "$FILE";
-echo size: "$DIR";
+echo size: "$SIZE";
 
 if [ ! -f "$FILE" ]; then
     fallocate -l "$SIZE" "$FILE"
