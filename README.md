@@ -16,7 +16,7 @@ docker run --rm -t -v ~:/root --name loop coderaiser/loop image.bin 100M
 You can pass arguments to docker container via environment variables `$FILE` and `$SIZE` as well:
 
 ```sh
-docker run --rm -t -v ~:/root --name loop -e "FILE=image.bin" -e "SIZE=100M" coderaiser/loop
+docker run --rm -t -v "$PWD:/root" --name loop -e "FILE=image.bin" -e "SIZE=100M" coderaiser/loop
 ```
 
 
