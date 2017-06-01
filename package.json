@@ -14,7 +14,8 @@
     "docker:build": "docker build . -t coderaiser/loop:`version`",
     "docker:push": "docker push coderaiser/loop:`version`",
     "build": "redrun docker:build",
-    "postwisdom:done": "redrun docker:*",
+    "build:all": "redrun docker:*",
+    "wisdom": "npm run build:all",
     "prewisdom": "rm -f package-lock.json",
     "watcher": "nodemon -w . -e sh --exec",
     "watch:lint": "npm run watcher -- 'npm run lint'"
