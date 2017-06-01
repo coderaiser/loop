@@ -11,7 +11,7 @@ docker run --rm coderaiser/loop <file> <size>
 ## Example
 
 ```sh
-docker run --rm -t -v ~:/root coderaiser/loop image.bin 100M
+docker run --rm -t -v ~:/root --name loop coderaiser/loop image.bin 100M
 ```
 
 ## License
