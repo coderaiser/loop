@@ -2,13 +2,14 @@
   "name": "loop",
   "private": true,
   "version": "1.1.0",
-  "description": "create file system image file",
+  "description": "Create or resize file system of an image file to use as a loop device",
   "bin": "loop.sh",
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/loop.git"
   },
   "scripts": {
+    "start": "./lib/loop.sh",
     "lint": "shellcheck *.sh",
     "docker:build": "docker build . -t coderaiser/loop:`version`",
     "docker:push": "docker push coderaiser/loop:`version`",
