@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "./lib/loop.sh",
-    "lint": "shellcheck -e SC1090 lib/*.sh",
+    "lint": "docker run --rm -v \"$PWD:/mnt\" koalaman/shellcheck lib/*.sh",
     "docker:build": "docker build . -t coderaiser/loop:`version`",
     "docker:push": "docker push coderaiser/loop:`version`",
     "build": "redrun docker:build",
