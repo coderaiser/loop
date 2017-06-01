@@ -1,6 +1,6 @@
 # Loop [![License][LicenseIMGURL]][LicenseURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL]
 
-Create or resize file system of an image file to use as a ([loop device](https://en.wikipedia.org/wiki/Loop_device));
+Create or resize file system of an image file to use as a [loop device](https://en.wikipedia.org/wiki/Loop_device).
 
 ## Usage
 
