@@ -1,3 +1,17 @@
+2017.06.02, v1.3.0
+
+fix:
+- refactor(loop) rm prefix "__"
+- (travis) shellcheck
+
+feature:
+- (package) scripts: prewisdom
+- (loop) add ability to checkDependencies
+- (loop) lib -> bin
+- (package) last version of shellcheck from docker
+- (package) wisdom
+
+
 2017.06.01, v1.2.0
 
 fix:
