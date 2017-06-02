@@ -16,7 +16,8 @@
     "build": "redrun docker:build",
     "build:all": "redrun docker:*",
     "wisdom": "npm run build:all",
-    "prewisdom": "rm -f package-lock.json",
+    "prewisdom": "redrun lint rm:*",
+    "rm:package-lock": "rm -f package-lock.json",
     "watcher": "nodemon -w . -e sh --exec",
     "watch:lint": "npm run watcher -- 'npm run lint'"
   },
