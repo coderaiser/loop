@@ -19,7 +19,6 @@ You can pass arguments to docker container via environment variables `$FILE` and
 docker run --rm -t -v "$PWD:/root" --name loop -e "FILE=image.bin" -e "SIZE=100M" coderaiser/loop
 ```
 
-
 ## License
 MIT
 

@@ -5,6 +5,9 @@ cleanExports() {
     unset -f exitIfNoArgs;
     unset -f createFileWhenNotExist;
     unset -f resizeFile;
+    unset -f check;
+    unset -f checkDependencies;
+    unset -f printMissing;
     unset -f cleanExports;
 }
 
@@ -22,13 +25,28 @@ exitIfNoArgs() {
     FILE=$1;
     SIZE=$2;
     
-    NO_ARGS=$([ $# -ne 2 ]);
-    NOT_ALL_ARGS=$([ -z "$FILE" ] || [ -z "$SIZE" ]);
-    
-    if [ "$NO_ARGS" ] || [ "$NOT_ALL_ARGS" ]; then
+    if [ -z "$FILE" ] || [ -z "$SIZE" ]; then
          echo "loop <file> <size>";
          exit;
     fi
+}
+
+check() {
+    if [ ! "$(which "$1")" ]; then
+        printMissing "$1";
+        exit 1;
+    fi
+}
+
+checkDependencies() {
+    check fallocate;
+    check mkfs.ext4;
+    check e2fsck;
+    check resize2fs;
+}
+
+printMissing() {
+    echo "$1 is missing, please install it";
 }
 
 createFileWhenNotExist() {

@@ -9,6 +9,7 @@ FILE=${1:-$FILE};
 SIZE=${2:-$SIZE};
 
 printVersionIfNeed "$1";
+checkDependencies;
 exitIfNoArgs "$FILE" "$SIZE";
 createFileWhenNotExist;
 resizeFile;
