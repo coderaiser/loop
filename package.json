@@ -3,14 +3,14 @@
   "private": true,
   "version": "1.2.0",
   "description": "Create or resize file system of an image file to use as a loop device",
-  "bin": "loop.sh",
+  "bin": "bin/loop.sh",
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/loop.git"
   },
   "scripts": {
-    "start": "./lib/loop.sh",
-    "lint": "docker run --rm -v \"$PWD:/mnt\" koalaman/shellcheck lib/*.sh",
+    "start": "./bin/loop.sh",
+    "lint": "docker run --rm -v \"$PWD:/mnt\" koalaman/shellcheck lib/*.sh bin/*.sh",
     "docker:build": "docker build . -t coderaiser/loop:`version`",
     "docker:push": "docker push coderaiser/loop:`version`",
     "build": "redrun docker:build",

@@ -14,5 +14,5 @@ COPY . /usr/src/app
 WORKDIR /root
 EXPOSE 8000
 
-ENTRYPOINT ["/bin/sh", "/usr/src/app/lib/loop.sh"]
+ENTRYPOINT ["/bin/sh", "/usr/src/app/bin/loop.sh"]
 

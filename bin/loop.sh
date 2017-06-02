@@ -3,7 +3,7 @@
 BASENAME=$(dirname "$0");
 
 # shellcheck source=lib/api.sh
-. "$BASENAME/api.sh"
+. "$BASENAME/../lib/api.sh"
 
 FILE=${1:-$FILE};
 SIZE=${2:-$SIZE};
