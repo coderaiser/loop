@@ -1,14 +1,14 @@
 #!/bin/sh
 
-__cleanExports() {
-    unset -f __printVersionIfNeed;
-    unset -f __exitIfNoArgs;
-    unset -f __createFileWhenNotExist;
-    unset -f __resizeFile;
-    unset -f __cleanExports;
+cleanExports() {
+    unset -f printVersionIfNeed;
+    unset -f exitIfNoArgs;
+    unset -f createFileWhenNotExist;
+    unset -f resizeFile;
+    unset -f cleanExports;
 }
 
-__printVersionIfNeed() {
+printVersionIfNeed() {
     if echo "$1" | grep -Eq '(-v|--version)'; then
         BASEDIR=$(dirname "$0");
         PACKAGE="$BASEDIR/../package.json";
@@ -18,7 +18,7 @@ __printVersionIfNeed() {
     fi
 }
 
-__exitIfNoArgs() {
+exitIfNoArgs() {
     FILE=$1;
     SIZE=$2;
     
@@ -31,14 +31,14 @@ __exitIfNoArgs() {
     fi
 }
 
-__createFileWhenNotExist() {
+createFileWhenNotExist() {
     if [ ! -f "$FILE" ]; then
         fallocate -l "$SIZE" "$FILE"
         mkfs.ext4 "$FILE"
     fi
 }
 
-__resizeFile() {
+resizeFile() {
     e2fsck "$FILE"
     resize2fs "$FILE" "$SIZE"
 }
