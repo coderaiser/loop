@@ -54,7 +54,9 @@ createFileWhenNotExist() {
     SIZE="$2"
     
     if [ ! -f "$FILE" ]; then
-        fallocate -l "$SIZE" "$FILE"
+        fallocate -l "$SIZE" "$FILE" || \
+        dd if=/dev/zero of="$FILE" bs="$SIZE" seek=1 count=0
+        
         mkfs.ext4 "$FILE"
     fi
 }
