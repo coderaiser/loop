@@ -1,3 +1,13 @@
+2017.06.13, v1.3.1
+
+fix:
+- (package) rm:docker
+
+feature:
+- (api) createFileWhenNotExist: add dd fallback: mac os
+- (loop) add $FILE, $SIZE
+
+
 2017.06.02, v1.3.0
 
 fix:
