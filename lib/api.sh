@@ -50,6 +50,9 @@ printMissing() {
 }
 
 createFileWhenNotExist() {
+    FILE="$1";
+    SIZE="$2"
+    
     if [ ! -f "$FILE" ]; then
         fallocate -l "$SIZE" "$FILE"
         mkfs.ext4 "$FILE"
@@ -57,6 +60,9 @@ createFileWhenNotExist() {
 }
 
 resizeFile() {
+    FILE=$1;
+    SIZE=$2;
+    
     e2fsck "$FILE"
     resize2fs "$FILE" "$SIZE"
 }

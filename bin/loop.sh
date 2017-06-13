@@ -11,7 +11,7 @@ SIZE=${2:-$SIZE};
 printVersionIfNeed "$1";
 checkDependencies;
 exitIfNoArgs "$FILE" "$SIZE";
-createFileWhenNotExist;
-resizeFile;
+createFileWhenNotExist "$FILE" "$SIZE";
+resizeFile "$FILE" "$SIZE";
 cleanExports;
 
