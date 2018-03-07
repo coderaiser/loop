@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "redrun": "^5.9.14",
+    "redrun": "^6.0.0",
     "version-io": "^2.0.1"
   }
 }
