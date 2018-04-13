@@ -1,14 +1,12 @@
-language: bash
-addons:
-  apt:
-    sources:
-    - debian-sid
-    packages:
-    - shellcheck
-    - 
+language: node_js
+node_js:
+    - 8
 
 script:
-  - shellcheck lib/*.sh
+  - npm run lint
+
+services:
+  - docker
 
 notifications:
     email:
