@@ -32,7 +32,7 @@ exitIfNoArgs() {
 }
 
 check() {
-    if [ ! "$(which "$1")" ]; then
+    if [ ! "$(command -v "$1")" ]; then
         printMissing "$1";
         exit 1;
     fi
