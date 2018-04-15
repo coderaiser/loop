@@ -65,7 +65,7 @@ resizeFile() {
     FILE=$1;
     SIZE=$2;
     
-    e2fsck -f "$FILE"
+    e2fsck -p "$FILE"
     resize2fs "$FILE" "$SIZE"
 }
 
