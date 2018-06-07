@@ -26,6 +26,6 @@ MIT
 [DependencyStatusIMGURL]:   https://img.shields.io/gemnasium/coderaiser/loop.svg?style=flat
 [LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
 [BuildStatusURL]:           https://travis-ci.org/coderaiser/loop  "Build Status"
-[DependencyStatusURL]:      https://gemnasium.com/coderaiser/loop "Dependency Status"
+[DependencyStatusURL]:      https://david-dm.org/coderaiser/loop "Dependency Status"
 [LicenseURL]:               https://tldrlegal.com/license/mit-license "MIT License"
 
