@@ -29,7 +29,7 @@
   "author": "coderaiser",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.7",
     "redrun": "^9.0.0",
     "version-io": "^4.0.1"
   }
