@@ -1,3 +1,16 @@
+2021.03.15, v1.4.1
+
+fix:
+- fix(api) mkfs.ext4 -t new -> mkfs.ext4: invalid blocks '-T'
+
+
+feature:
+- feature(package) nodemon v2.0.7
+- feature(package) redrun v9.0.0
+- feature(package) version-io v4.0.1
+
+
+
 2018.05.30, v1.4.0
 
 feature:
