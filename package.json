@@ -4,33 +4,37 @@
   "version": "1.4.0",
   "description": "Create or resize file system of an image file to use as a loop device",
   "bin": "bin/loop.sh",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/loop.git"
   },
   "scripts": {
-    "start": "./bin/loop.sh",
-    "lint": "docker run --rm -v \"$PWD:/mnt\" koalaman/shellcheck lib/*.sh bin/*.sh",
-    "docker:build": "docker build . -t coderaiser/loop:`version`",
-    "postdocker:build": "docker tag coderaiser/loop:`version` coderaiser/loop:latest",
-    "rm:docker": "docker rmi -f coderaiser/loop:`version`",
-    "docker:push": "docker push coderaiser/loop:`version`",
-    "postdocker:push": "docker push coderaiser/loop:latest",
-    "build": "redrun docker:build",
-    "build:all": "redrun docker:*",
-    "wisdom:done": "npm run build:all",
-    "wisodm": "redrun lint",
-    "prewisdom": "redrun rm:* rm:docker",
-    "rm:package-lock": "rm -f package-lock.json",
-    "watcher": "nodemon -w . -e sh --exec",
-    "watch:lint": "npm run watcher -- 'npm run lint'"
+    "start": "madrun start",
+    "lint": "madrun lint",
+    "fresh:lint": "madrun fresh:lint",
+    "lint:fresh": "madrun lint:fresh",
+    "fix:lint": "madrun fix:lint",
+    "docker:build": "madrun docker:build",
+    "rm:docker": "madrun rm:docker",
+    "docker:push": "madrun docker:push",
+    "build": "madrun build",
+    "build:all": "madrun build:all",
+    "wisdom:done": "madrun wisdom:done",
+    "wisodm": "madrun wisodm",
+    "rm:package-lock": "madrun rm:package-lock",
+    "watcher": "madrun watcher",
+    "watch:lint": "madrun watch:lint"
+  },
+  "engine": {
+    "node": ">=14"
   },
   "keywords": [],
   "author": "coderaiser",
   "license": "MIT",
   "devDependencies": {
+    "madrun": "^8.8.1",
     "nodemon": "^2.0.7",
-    "redrun": "^9.0.0",
     "version-io": "^4.0.1"
   }
 }

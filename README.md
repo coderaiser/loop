@@ -1,7 +1,7 @@
 # Loop [![License][LicenseIMGURL]][LicenseURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL]
 
-[BuildStatusURL]:           https://travis-ci.org/coderaiser/loop  "Build Status"
-[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/loop/master.svg?style=flat
+[BuildStatusURL]:           https://github.com/coderaiser/loop/actions?query=workflow%3A%22Node+CI%22 "Build Status"
+[BuildStatusIMGURL]:        https://github.com/coderaiser/loop/workflows/Node%20CI/badge.svg
 [DependencyStatusIMGURL]:   https://david-dm.org/coderaiser/loop.svg?path=packages/putout
 [DependencyStatusURL]:      https://david-dm.org/coderaiser/loop?path=packages/putout "Dependency Status"
 [LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
