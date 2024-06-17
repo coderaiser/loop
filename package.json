@@ -39,6 +39,7 @@
   "author": "coderaiser",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^9.5.0",
     "madrun": "^10.0.1",
     "nodemon": "^2.0.7",
     "putout": "^35.35.0",
