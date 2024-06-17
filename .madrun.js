@@ -5,7 +5,7 @@ export default {
     'lint': () => run('lint:*'),
     'lint:js': () => 'putout .',
     'lint:bash': () => `docker run --rm -v "$PWD:/mnt" koalaman/shellcheck lib/*.sh bin/*.sh`,
-    'fix:lint': () => run('lint', '--fix'),
+    'fix:lint': () => run('lint:js', '--fix'),
     'docker:build': () => 'docker build . -t coderaiser/loop:`version`',
     'postdocker:build': () => 'docker tag coderaiser/loop:`version` coderaiser/loop:latest',
     'rm:docker': () => 'docker rmi -f coderaiser/loop:`version`',
@@ -21,5 +21,5 @@ export default {
     'prewisdom': async () => await run(['rm:*', 'rm:docker']),
     'rm:package-lock': () => 'rm -f package-lock.json',
     'watcher': () => 'nodemon -w . -e sh --exec',
-    'watch:lint': () => run('watcher', '\'npm run lint\''),
+    'watch:lint': async () => await run('watcher', `'npm run lint'`),
 };
