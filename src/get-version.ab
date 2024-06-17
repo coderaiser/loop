@@ -1,0 +1,7 @@
+pub fun get_version() {
+    let BASEDIR = unsafe $dirname "\$0"$
+    let PACKAGE="{BASEDIR}/../package.json";
+    let VERSION= unsafe $grep '"version":' "{PACKAGE}"| cut -d\\" -f4$
+
+    return VERSION;
+}

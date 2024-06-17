@@ -1,0 +1,50 @@
+import {exit} from "std"
+import {get_version} from "./get-version.ab";
+import {get_missing_dependency} from "./get-missing-dependency.ab";
+import {create_file_when_not_exist} from "./create_file_when_not_exist.ab";
+import {resize_file} from "./resize-file.ab";
+
+main {
+    let file = "$1"
+    let size = "$2"
+
+    if {
+        file == "" {
+            echo "loop <file> <size>";
+            exit(0);
+        }
+        size == "" {
+            echo "loop <file> <size>";
+            exit(0);
+        }
+    }
+
+    if {
+        file == "-v" {
+            let version = get_version();
+            echo "v{version}"
+            exit(0);
+        }
+        file == "--version" {
+            let version = get_version();
+            echo "v{version}"
+            exit(0);
+        }
+    }
+
+    let missing = get_missing_dependency();
+
+    if missing != "" {
+        echo "{missing} is missing, please install it";
+        exit(1);
+    }
+
+    create_file_when_not_exist(file, size) failed {
+        fail status;
+    }
+    
+    resize_file(file, size) failed {
+        fail status;
+    }
+
+}

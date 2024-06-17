@@ -1,0 +1,4 @@
+pub fun resize_file(file, size) {
+    $e2fsck -fy "{file}"$?
+    $resize2fs "{file}" "{size}"$?
+}

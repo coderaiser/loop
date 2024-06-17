@@ -1,0 +1,11 @@
+pub fun create_file_when_not_exist(file, size) {
+    unsafe $test -f {file}$;
+
+    if status == 1 {
+        $fallocate -l "{size}" "{file}"$ failed {
+            unsafe $dd if=/dev/zero of="{file}" bs="{size}" seek=1 count=0$
+        }
+        
+        $mkfs.ext4 "{file}"$?
+    }
+}

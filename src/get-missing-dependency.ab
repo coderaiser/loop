@@ -1,0 +1,16 @@
+let names = [
+    "fallocate",
+    "mkfs.ext4",
+    "e2fsck",
+    "resize2fs"
+]
+
+pub fun get_missing_dependency() {
+    loop name in names {
+        if unsafe $command -v {name} == ""$ {
+            return name;
+        }
+    }
+
+    return "";
+}
