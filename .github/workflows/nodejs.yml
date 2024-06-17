@@ -18,6 +18,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
+    - name: Install Amber
+      run:
+        curl -s "https://raw.githubusercontent.com/Ph0enixKM/AmberNative/master/setup/install.sh" | bash
+
     - name: Install Redrun
       run:
         npm i redrun -g
@@ -26,9 +30,9 @@ jobs:
       run:
         npm install
     
-    - name: Bootstrap
+    - name: build
       run:
-        redrun bootstrap
+        redrun build:amber
     
     - name: Lint
       run:
