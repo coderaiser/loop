@@ -33,7 +33,7 @@
   "author": "coderaiser",
   "license": "MIT",
   "devDependencies": {
-    "madrun": "^8.8.1",
+    "madrun": "^10.0.1",
     "nodemon": "^2.0.7",
     "version-io": "^4.0.1"
   }
