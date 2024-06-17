@@ -1,11 +1,11 @@
-pub fun create_file_when_not_exist(file, size) {
-    unsafe $test -f {file}$;
+import {file_exist} from "std";
 
-    if status == 1 {
+pub fun create_file_when_not_exist(file, size) {
+    if file_exist(file) {
+        $mkfs.ext4 "{file}"$?;
+    } else {
         $fallocate -l "{size}" "{file}"$ failed {
-            unsafe $dd if=/dev/zero of="{file}" bs="{size}" seek=1 count=0$
+            $dd if=/dev/zero of="{file}" bs="{size}" seek=1 count=0$?
         }
-        
-        $mkfs.ext4 "{file}"$?
     }
 }
