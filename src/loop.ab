@@ -9,17 +9,6 @@ main {
     let size = "$2"
 
     if {
-        file == "" {
-            echo "loop <file> <size>";
-            exit(0);
-        }
-        size == "" {
-            echo "loop <file> <size>";
-            exit(0);
-        }
-    }
-
-    if {
         file == "-v" {
             let version = get_version();
             echo "v{version}"
@@ -28,6 +17,14 @@ main {
         file == "--version" {
             let version = get_version();
             echo "v{version}"
+            exit(0);
+        }
+        file == "" {
+            echo "loop <file> <size>";
+            exit(0);
+        }
+        size == "" {
+            echo "loop <file> <size>";
             exit(0);
         }
     }
