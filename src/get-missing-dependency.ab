@@ -1,3 +1,5 @@
+import {has_failed} from "std";
+
 let names = [
     "fallocate",
     "mkfs.ext4",
@@ -7,7 +9,7 @@ let names = [
 
 pub fun get_missing_dependency() {
     loop name in names {
-        if unsafe $command -v {name} == ""$ {
+        if has_failed(name) {
             return name;
         }
     }
