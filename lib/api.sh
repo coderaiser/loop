@@ -46,7 +46,7 @@ checkDependencies() {
 }
 
 printMissing() {
-    echo "$1 is missing, please install it";
+    echo "'$1' is missing, please install it";
 }
 
 createFileWhenNotExist() {

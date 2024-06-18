@@ -45,5 +45,9 @@
     "nodemon": "^2.0.7",
     "putout": "^35.35.0",
     "version-io": "^4.0.1"
+  },
+  "dependencies": {
+    "try-to-catch": "^3.0.1",
+    "zx": "^8.1.2"
   }
 }

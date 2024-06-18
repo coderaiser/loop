@@ -11,7 +11,7 @@ export default {
     'rm:docker': () => 'docker rmi -f coderaiser/loop:`version`',
     'docker:push': () => 'docker push coderaiser/loop:`version`',
     'postdocker:push': () => 'docker push coderaiser/loop:latest',
-    'build:amber': () => 'mkdir -p dist; amber src/loop.ab dist/loop.sh',
+    'build:amber': () => 'mkdir -p dist; amber amber/loop.js dist/loop.sh',
     'run:amber': () => 'bash dist/loop.sh',
     'run': () => run(['build:amber', 'run:amber']),
     'build': () => run('docker:build'),
