@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install Amber
-        run: curl -sL "https://github.com/amber-lang/amber/releases/download/0.5.1-alpha/install.sh"
+        run: bash <(curl -sL "https://github.com/amber-lang/amber/releases/download/0.5.1-alpha/install.sh")
       - name: Install Redrun
         run: bun i redrun -g --no-save
       - name: Install
