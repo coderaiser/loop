@@ -47,7 +47,7 @@
     "version-io": "^4.0.1"
   },
   "dependencies": {
-    "try-to-catch": "^3.0.1",
+    "try-to-catch": "^4.0.5",
     "zx": "^8.1.2"
   }
 }
