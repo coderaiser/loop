@@ -1,4 +1,5 @@
 import {hasFailed} from './std.js';
+import {$} from 'zx';
 
 const names = [
     'fallocate',
@@ -9,7 +10,7 @@ const names = [
 
 export const getMissingDependency = async function() {
     for (const name of names) {
-        if (await hasFailed(name))
+        if (!$.sync()`command -v ${name}`)
             return name;
     }
     

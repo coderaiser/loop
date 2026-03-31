@@ -4,12 +4,12 @@ import {$} from 'zx';
 
 export const createFileWhenNotExist = async (file) => {
     if (await fileExist(file))
-        return $`mkfs.ext4 "${file}"`;
+        return $.sync`mkfs.ext4 "${file}"`;
     
-    const [fallocateError] = await tryToCatch($`fallocate -l "{size}" "{file}"`);
+    const [fallocateError] = await tryToCatch($.sync, `fallocate -l "{size}" "{file}"`);
     
     if (!fallocateError)
         return;
     
-    return await $`dd if=/dev/zero of="{file}" bs="{size}" seek=1 count=0`;
+    return await $.sync`dd if=/dev/zero of="{file}" bs="{size}" seek=1 count=0`;
 };
