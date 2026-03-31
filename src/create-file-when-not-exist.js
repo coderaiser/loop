@@ -1,6 +1,6 @@
-import {fileExist} from './std.js';
-import tryToCatch from 'try-to-catch';
+import {tryToCatch} from 'try-to-catch';
 import {$} from 'zx';
+import {fileExist} from './std.js';
 
 export const createFileWhenNotExist = async (file) => {
     if (await fileExist(file))

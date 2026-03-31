@@ -1,4 +1,3 @@
-import {hasFailed} from './std.js';
 import {$} from 'zx';
 
 const names = [

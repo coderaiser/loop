@@ -6,4 +6,3 @@ export const resizeFile = (file, size) => {
         resize2fs "${file}" "${size}";
     `;
 };
-
