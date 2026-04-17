@@ -1,4 +1,3 @@
-import {exit} from "std"
 import {get_version} from "./get-version.ab";
 import {get_missing_dependency} from "./get-missing-dependency.ab";
 import {create_file_when_not_exist} from "./create_file_when_not_exist.ab";
