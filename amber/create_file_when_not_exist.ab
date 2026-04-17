@@ -1,7 +1,7 @@
-import {file_exist} from "std/fs";
+import {file_exists} from "std/fs";
 
 pub fun create_file_when_not_exist(file, size) {
-    if file_exist(file) {
+    if file_exists(file) {
         $mkfs.ext2 "{file}"$?;
     } else {
         $fallocate -l "{size}" "{file}"$ failed {
