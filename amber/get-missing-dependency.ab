@@ -8,7 +8,7 @@ let names = [
 ]
 
 pub fun get_missing_dependency() {
-    loop name in names {
+    for name in names {
         if has_failed(name) {
             return name;
         }
