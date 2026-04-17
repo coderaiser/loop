@@ -1,4 +1,4 @@
-import {file_exist} from "std";
+import {file_exist} from "std/fs";
 
 pub fun create_file_when_not_exist(file, size) {
     if file_exist(file) {
