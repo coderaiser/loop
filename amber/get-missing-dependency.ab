@@ -1,4 +1,4 @@
-import {has_failed} from "std";
+import {has_failed} from "std/env";
 
 let names = [
     "fallocate",
