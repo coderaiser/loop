@@ -40,7 +40,7 @@ check() {
 
 checkDependencies() {
     check fallocate;
-    check mkfs.ext4;
+    check mkfs.ext2;
     check e2fsck;
     check resize2fs;
 }
