@@ -4,6 +4,7 @@ import {tryToCatch} from 'try-to-catch';
 const wrapTag = (tag) => (arg) => tag({
     quiet: true,
 })`${arg}`;
+
 const $$ = wrapTag($);
 
 export const hasFailed = async (command) => {

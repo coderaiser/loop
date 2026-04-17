@@ -1,7 +1,9 @@
 FROM alpine
-MAINTAINER Coderaiser
+
+LABEL org.opencontainers.image.authors=Coderaiser
 
 RUN mkdir -p /usr/src/app
+
 WORKDIR /usr/src/app
 
 RUN apk update && \
@@ -14,4 +16,3 @@ COPY . /usr/src/app
 WORKDIR /root
 
 ENTRYPOINT ["/bin/sh", "/usr/src/app/bin/loop.sh"]
-
