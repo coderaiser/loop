@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NAME: loop
     strategy:
       matrix:
         node-version:
@@ -29,4 +31,9 @@ jobs:
       - name: build
         run: redrun build:amber
       - name: Lint
-        run: redrun lint
+        run: redrun fix:lint
+      - name: Commit fixes
+        uses: EndBug/add-and-commit@v9
+        continue-on-error: true
+        with:
+          message: "chore: ${{ env.NAME }}: actions: lint ☘️"
