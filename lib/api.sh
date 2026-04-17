@@ -65,7 +65,10 @@ resizeFile() {
     FILE=$1;
     SIZE=$2;
     
-    e2fsck -fy "$FILE"
-    resize2fs "$FILE" "$SIZE"
+    output=$(resize2fs "$FILE" "$SIZE" 2>&1)
+
+    if ! echo "$output" | grep -q "Nothing to do"; then
+        e2fsck -fy "$FILE"
+    fi
 }
 
