@@ -1,3 +1,28 @@
+2026.04.18, v1.5.0
+
+fix:
+- e862f59 change filesystem type from ext4 to ext2
+- 718ee7f loop: condition
+
+feature:
+- cf06e10 api: run check only after resize
+- 2d9e5a1 loop: version-io v6.1.2
+- 9222c29 loop: try-to-catch v4.0.5
+- 5512398 loop: putout v42.3.0
+- 6b1061c loop: nodemon v3.1.14
+- 1a15d85 loop: madrun v13.0.1
+- 9391fc5 loop: eslint-plugin-putout v31.1.2
+- cdb7ba8 loop: eslint v10.1.0
+- 1bb68f7 dockerignore: src
+- f1d5fb8 loop: add version on js
+- 3e63220 loop: use has_failed (https://github.com/Ph0enixKM/Amber/blob/0.3.3-alpha/src/std/main.ab#L114)
+- ffb8b4b loop: use file_exist (https://github.com/Ph0enixKM/Amber/blob/0.3.3-alpha/src/std/main.ab#L26)
+- 3881d74 loop: eslint-plugin-putout v22.10.0
+- 1e051e7 loop: eslint v9.5.0
+- dc6d9a1 loop: putout v35.35.0
+- 6500742 loop: add amber
+- 2a47946 loop: madrun v10.0.1
+
 2021.03.15, v1.4.1
 
 fix:
