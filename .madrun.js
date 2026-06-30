@@ -6,6 +6,15 @@ export default {
     'lint:js': () => 'putout .',
     'lint:bash': () => `docker run --rm -v "$PWD:/mnt" koalaman/shellcheck lib/*.sh bin/*.sh`,
     'fix:lint': () => run('lint:js', '--fix'),
+    'docker': () => {
+        return [
+            'docker buildx build',
+             '--platform linux/arm64',
+             '-t docker.io/coderaiser/loop:latest',
+             '-t docker.io/coderaiser/loop:`version`',
+             '--push .'
+          ].join(' ');
+    },
     'docker:build': () => 'docker build . -t coderaiser/loop:`version`',
     'postdocker:build': () => 'docker tag coderaiser/loop:`version` coderaiser/loop:latest',
     'rm:docker': () => 'docker rmi -f coderaiser/loop:`version`',
@@ -16,7 +25,8 @@ export default {
     'run': () => run(['build:amber', 'run:amber']),
     'build': () => run('docker:build'),
     'build:all': () => run('docker:*'),
-    'wisdom:done': () => run('build:all'),
+    //'wisdom:done': () => run('build:all'),
+    'wisdom:done': () => run('docker'),
     'wisodm': () => run('lint'),
     'prewisdom': async () => await run(['rm:*', 'rm:docker']),
     'rm:package-lock': () => 'rm -f package-lock.json',
