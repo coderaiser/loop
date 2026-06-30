@@ -16,7 +16,7 @@ export default {
     'run': () => run(['build:amber', 'run:amber']),
     'build': () => run('docker:build'),
     'build:all': () => run('docker:*'),
-    'wisdom:done': () => run('build:all'),
+    '_wisdom:done': () => run('build:all'),
     'wisodm': () => run('lint'),
     'prewisdom': async () => await run(['rm:*', 'rm:docker']),
     'rm:package-lock': () => 'rm -f package-lock.json',
